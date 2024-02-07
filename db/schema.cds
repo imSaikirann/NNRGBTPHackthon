@@ -54,7 +54,7 @@ entity Store : cuid,managed {
     address2 : String(20) @mandatory;
     @title : 'PIN Code'
     pincode : String(20) @mandatory;
-    Products : Composition of many {
+    Product : Composition of many {
         pro : Association to Product
     }
   
