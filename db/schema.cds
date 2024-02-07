@@ -54,5 +54,23 @@ entity Store : cuid,managed {
     address2 : String(20) @mandatory;
     @title : 'PIN Code'
     pincode : String(20) @mandatory;
+    Products : Composition of many {
+        pro : Association to Product
+    }
+  
+}
+
+//product schema
+entity Product : cuid ,managed{
+    @title : 'Product ID'
+    product_id : String(10);
+    @title : ' Product Name'
+    product_name : String(10) @mandatory;
+    @title : 'Product Image URL'
+    product_image : String(50) @mandatory;
+    @title : 'Product Cost Price'
+    product_cost_price: String(20) @mandatory;
+    @title : 'Product Sell Price'
+    product_sell_price: String(20) @mandatory;
   
 }
