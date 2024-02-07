@@ -1,6 +1,10 @@
 namespace com.saikiran.eleStore;
 using { cuid,managed } from '@sap/cds/common';
 
+@assert.unique:{
+   businesspartner_number  :[ businesspartner_number]
+}
+
 
 entity BusinessPartner : cuid,managed {
     @title : 'Business Partner Number'

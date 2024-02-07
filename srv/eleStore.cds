@@ -9,6 +9,12 @@ service Electronics {
 //create button
 annotate Electronics.BusinessPartner with @odata.draft.enabled ;
 
+//validations
+
+annotate Electronics.BusinessPartner with {
+   pincode     @assert.format: '^[1-9]\d{2}( ?\d{3})?$';
+}
+
 
 //annotations for Business partner
 annotate Electronics.BusinessPartner with @(
