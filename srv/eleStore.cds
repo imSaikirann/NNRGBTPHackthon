@@ -48,6 +48,18 @@ annotate Electronics.BusinessPartner with @(
             $Type : 'UI.DataField',
             Value: gstin_number
         },
+         {
+           
+            Value: is_gstn_reg
+        },
+         {
+           
+            Value: Is_vendor
+        },
+         {
+           
+            Value: Is_customer
+        },
     ],
     UI.FieldGroup #BusinessPartnerInformation : {
         $Type : 'UI.FieldGroupType',
@@ -80,7 +92,18 @@ annotate Electronics.BusinessPartner with @(
             $Type : 'UI.DataField',
             Value: gstin_number,
         },
-            
+               {
+           
+            Value: is_gstn_reg,
+        },
+         {
+           
+            Value: Is_vendor,
+        },
+         {
+           
+            Value: Is_customer,
+        },
         ]
     },
     UI.Facets : [
