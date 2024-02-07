@@ -17,7 +17,9 @@ entity BusinessPartner : cuid,managed {
     address2 : String(20) @mandatory;
      @title : 'City'
     city : String(20) @mandatory;
- 
+      @title:'State'
+    state:Association to States;
+
     @title : 'PIN Code'
     pincode : String(20) @mandatory;
     @title : 'Do you Registerd for GSTN '
@@ -32,3 +34,11 @@ entity BusinessPartner : cuid,managed {
 }
 
 
+@cds.persistence.skip
+entity States {
+    @title:'code'
+    key code: String(3);
+    @title:'description'
+    description:String(10);
+    
+}

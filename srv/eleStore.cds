@@ -4,10 +4,13 @@ using { com.saikiran.eleStore as db } from '../db/schema';
 service Electronics {
 
     entity BusinessPartner as projection on db.BusinessPartner;
+    entity States as projection on db.States;
 
 }
 //create button
 annotate Electronics.BusinessPartner with @odata.draft.enabled ;
+annotate Electronics.States with @odata.draft.enabled ;
+
 
 //validations
 
@@ -60,6 +63,10 @@ annotate Electronics.BusinessPartner with @(
            
             Value: Is_customer
         },
+          {
+            Label: 'State',
+            Value: state_code
+        },
     ],
     UI.FieldGroup #BusinessPartnerInformation : {
         $Type : 'UI.FieldGroupType',
@@ -104,6 +111,10 @@ annotate Electronics.BusinessPartner with @(
            
             Value: Is_customer,
         },
+          {
+            Label: 'State',
+            Value: state_code,
+        },
         ]
     },
     UI.Facets : [
@@ -116,3 +127,27 @@ annotate Electronics.BusinessPartner with @(
     ]
       
 ) ;
+
+
+
+annotate Electronics.BusinessPartner with {
+    state @(
+        Common.ValueListWithFixedValues: true,
+        Common.ValueList               : {
+            Label         : 'State',
+            CollectionPath: 'States',
+            Parameters    : [
+                {
+                    $Type            : 'Common.ValueListParameterInOut',
+                    LocalDataProperty: state_code,
+                    ValueListProperty: 'code'
+                },
+
+                {
+                    $Type            : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty: 'description'
+                },
+            ]
+        }
+    );
+};
