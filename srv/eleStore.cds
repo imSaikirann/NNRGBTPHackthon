@@ -13,6 +13,7 @@ annotate Electronics.BusinessPartner with @odata.draft.enabled ;
 
 annotate Electronics.BusinessPartner with {
    pincode     @assert.format: '^[1-9]\d{2}( ?\d{3})?$';
+   gstin_number @assert.format:'^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[0-9A-Z]{1}[0-9A-Z]{1}$'
 }
 
 
