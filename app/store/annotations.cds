@@ -1,0 +1,1 @@
+using StoreS as service from '../../srv/store_annotation';

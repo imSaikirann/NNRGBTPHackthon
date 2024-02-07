@@ -74,3 +74,11 @@ entity Product : cuid ,managed{
     product_sell_price: String(20) @mandatory;
   
 }
+
+
+entity Stock {
+    key ID            : UUID;
+    storeId         : Association to Store;
+    productId       : Association to Product;
+    stock_qty        : Integer;
+}

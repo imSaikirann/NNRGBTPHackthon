@@ -4,11 +4,13 @@ using { com.saikiran.eleStore as db } from '../db/schema';
 service StoreS {
 
     entity Store as projection on db.Store;
+    entity Stock    as projection on db.Stock;
 
 }
 //create button
 annotate StoreS.Store with @odata.draft.enabled ;
- 
+
+annotate StoreS.Stock with @odata.draft.enabled;
 
 
 //validations
